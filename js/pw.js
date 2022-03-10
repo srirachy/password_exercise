@@ -1,8 +1,8 @@
 // flow of code
-var thePassword = initialInput();
-var validLength = checkLength(thePassword);
-var validFirstChar = checkFirstChar(thePassword);
-var whichAlert = acceptOrReject(validLength, validFirstChar);
+var thePassword = initialInput(); //string
+var validLength = checkLength(thePassword); //boolean
+var validFirstChar = checkFirstChar(thePassword); //boolean
+var whichAlert = acceptOrReject(validLength, validFirstChar); //boolean
 
 // ending output
 if (whichAlert == true){
@@ -45,10 +45,12 @@ function checkFirstChar(userInput){
     const firstLetter = thePassword.charAt(0);
     // alert(firstLetter);
 
+    // returns true if first character is not the same when comparing upper/lower cases indicating its a letter
+    // returns false otherwise
     return firstLetter.toLowerCase() != firstLetter.toUpperCase();
 }
 
-// 
+// check if output will be success or not
 function acceptOrReject(isValidLength, isValidFirstChar){
     let isValid;
     if (validLength == true && validFirstChar == true){
