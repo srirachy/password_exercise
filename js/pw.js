@@ -1,8 +1,8 @@
 // flow of code
-var thePassword = initialInput(); //string
-var validLength = checkLength(thePassword); //boolean
-var validFirstChar = checkFirstChar(thePassword); //boolean
-var whichAlert = acceptOrReject(validLength, validFirstChar); //boolean
+let thePassword = initialInput(); //string
+let validLength = checkLength(thePassword); //boolean
+let validFirstChar = checkFirstChar(thePassword); //boolean
+let whichAlert = acceptOrReject(validLength, validFirstChar); //boolean
 
 // ending output
 if (whichAlert == true){
