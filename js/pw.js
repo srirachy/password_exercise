@@ -3,21 +3,13 @@ let thePassword = initialInput(); //string
 let validLength = checkLength(thePassword); //boolean
 let validFirstChar = checkFirstChar(thePassword); //boolean
 let whichAlert = acceptOrReject(validLength, validFirstChar); //boolean
+let alertMsg = setOutputMsg(); //string
+alert(alertMsg); //display ending message
 
-// ending output
-if (whichAlert == true){
-    alert('Password accepted!');
-} else {
-    if (validLength == false){
-        alert('Invalid password. Password must be 6-20 characters long.');
-    } else {
-        alert('Invalid password. Password must start with a letter.');
-    }
-}
-
-// prompt for user input 
+// prompt for user input ft cancel button handler
 function initialInput(){
     const pw = prompt("Please enter a password (Must be 6-20 characters long and must start with a letter):");
+    //cancel button handler
     if (pw === null){
         return;
     }
@@ -51,7 +43,7 @@ function checkFirstChar(userInput){
 }
 
 // check if output will be success or not
-function acceptOrReject(isValidLength, isValidFirstChar){
+function acceptOrReject(){
     let isValid;
     if (validLength == true && validFirstChar == true){
         isValid = true;
@@ -60,4 +52,20 @@ function acceptOrReject(isValidLength, isValidFirstChar){
     }
 
     return isValid;
+}
+
+// self-explanitory, but set output message
+function setOutputMsg(checkAlert, isValidLength){
+    let outputMsg;
+    if (whichAlert == true){
+        outputMsg = "Password accepted!";
+    } else {
+        if (validLength == false){
+            outputMsg = "Invalid password. Password must be 6-20 characters long.";
+        } else {
+            outputMsg = "Invalid password. Password must start with a letter.";
+        }
+    }
+
+    return outputMsg;
 }
